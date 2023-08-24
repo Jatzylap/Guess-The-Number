@@ -14,6 +14,7 @@ To install the necessary library(ies) to run the script:
   pip install -r requirements.txt
   ```
 
+
 ## Development information:
 
 Developed by: Jatzylap
