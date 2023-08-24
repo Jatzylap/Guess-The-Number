@@ -463,7 +463,5 @@ def main():
 
     pygame.quit()
 
-main()
-
-
-# pyinstaller --noconsole -F --i "src/a/icon.ico" --add-data "src;src/"  "main.py"
+if __name__ == '__main__':
+    main()
