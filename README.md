@@ -17,7 +17,7 @@ To install the necessary library(ies) to run the script:
   pip install -r requirements.txt
   ```
 
-# Pyinstaller
+# Pyinstaller (optional)
 Use this command into CMD to compile into EXE for Windows OS
   ```
 pyinstaller --noconsole -F --i "src/a/icon.ico" --add-data "src;src/"  "main.py"
