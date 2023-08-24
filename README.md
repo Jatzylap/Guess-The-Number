@@ -21,4 +21,4 @@ To install the necessary library(ies) to run the script:
 ## Development information
 Developed by: Jatzylap
 
-Libraries used: Pygame 2.5.0, OpenCV 4.8.0.76
+Libraries used: Pygame 2.5.0, OpenCV 4.8.0
