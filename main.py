@@ -127,7 +127,7 @@ def main():
                 pygame.display.flip()
                 attempts = 3
                 secret_num = r.randint(0,1)
-                print("Secret Number: ",secret_num,"Scale: ",scale)
+                #print("Secret Number: ",secret_num,"Scale: ",scale)
                 start_time = time.time()
                 while time.time() - start_time < 3:
                     pass
@@ -237,7 +237,7 @@ def main():
                     while time.time() - start_time < 2:
                         pass
                     enter = False
-                    print("Secret Number: ",secret_num,"Scale: ",scale)
+                    #print("Secret Number: ",secret_num,"Scale: ",scale)
 
                 # Text indicator
                 if text_input == ['x','x']:
@@ -328,7 +328,7 @@ def main():
             screen.blit(pygame.transform.scale(record,(1000,285)),(125,390),(0,0,1000,285))
 
             for g in range(len(guesses)):
-                print("You correctly guessed the number ",guesses," times")
+                #print("You correctly guessed the number ",guesses," times")
                 if g == 0:
                     if guesses[0] == '0':
                         screen.blit(pygame.transform.scale(number,(300,33)),(900,508),(0,0,30,33))
@@ -404,61 +404,61 @@ def main():
                                 enter = True
                                 text_box.append(text_input[key])
                                 text_input[key] = 'x'
-                                print(text_input)
+                                #print(text_input)
                     for key in range(len(text_input)):
                         if event.key == pygame.K_BACKSPACE:
                             if type(text_input[key]) is int and cursor:
                                 text_input[key] = 'x'
-                                print(text_input)
+                                #print(text_input)
                         if event.key == pygame.K_0 or event.key == pygame.K_KP0:
                             if text_input[key] == 'x' and cursor:
                                 text_input[key] = 0
-                                print(text_input)
+                               #print(text_input)
                                 cursor = False
                         if event.key == pygame.K_1 or event.key == pygame.K_KP1:
                             if text_input[key] == 'x' and cursor:
                                 text_input[key] = 1
-                                print(text_input)
+                               #print(text_input)
                                 cursor = False
                         if event.key == pygame.K_2 or event.key == pygame.K_KP2:
                             if text_input[key] == 'x' and cursor:
                                 text_input[key] = 2
-                                print(text_input)
+                               #print(text_input)
                                 cursor = False
                         if event.key == pygame.K_3 or event.key == pygame.K_KP3:
                             if text_input[key] == 'x' and cursor:
                                 text_input[key] = 3
-                                print(text_input)
+                               #print(text_input)
                                 cursor = False
                         if event.key == pygame.K_4 or event.key == pygame.K_KP4:
                             if text_input[key] == 'x' and cursor:
                                 text_input[key] = 4
-                                print(text_input)
+                               #print(text_input)
                                 cursor = False
                         if event.key == pygame.K_5 or event.key == pygame.K_KP5:
                             if text_input[key] == 'x' and cursor:
                                 text_input[key] = 5
-                                print(text_input)
+                               #print(text_input)
                                 cursor = False
                         if event.key == pygame.K_6 or event.key == pygame.K_KP6:
                             if text_input[key] == 'x' and cursor:
                                 text_input[key] = 6
-                                print(text_input)
+                               #print(text_input)
                                 cursor = False
                         if event.key == pygame.K_7 or event.key == pygame.K_KP7:
                            if text_input[key] == 'x' and cursor:
                                text_input[key] = 7
-                               print(text_input)
+                              #print(text_input)
                                cursor = False
                         if event.key == pygame.K_8 or event.key == pygame.K_KP8:
                             if text_input[key] == 'x' and cursor:
                                 text_input[key] = 8
-                                print(text_input)
+                               #print(text_input)
                                 cursor = False
                         if event.key == pygame.K_9 or event.key == pygame.K_KP9:
                             if text_input[key] == 'x' and cursor:
                                 text_input[key] = 9
-                                print(text_input)
+                               #print(text_input)
                                 cursor = False
 
     pygame.quit()
