@@ -1,10 +1,10 @@
 # Guess-The-Number
 A small number guessing game concept.
 
-# Controls
+## Controls
 Use the mouse and number pad keys to play.
 
-# Installation
+## Installation
 To install the necessary library(ies) to run the script:
 
 1- Open a console window (Terminal for Mac / CMD for Windows)
@@ -17,7 +17,7 @@ To install the necessary library(ies) to run the script:
   pip install -r requirements.txt
   ```
 
-# Pyinstaller (optional)
+## Pyinstaller (optional)
 Use this command into CMD to compile into EXE for Windows OS
   ```
 pyinstaller --noconsole -F --i "src/a/icon.ico" --add-data "src;src/"  "main.py"
