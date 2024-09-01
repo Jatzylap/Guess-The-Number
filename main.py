@@ -320,7 +320,6 @@ def main():
 
         if win:
             guesses = str(guesses)
-            print(guesses)
             screen.fill((100,100,100))
             screen.blit(pygame.transform.scale(end,(1000,285)),(115,130),(0,0,800,228))
             screen.blit(pygame.transform.scale(record,(1000,285)),(125,390),(0,0,1000,285))
