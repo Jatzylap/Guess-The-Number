@@ -1,7 +1,7 @@
 '''
 Title: Guess-The-Number
 Author: Jatzylap
-Version: 1.0
+Version: 1.1
 '''
 
 import pygame
@@ -92,7 +92,6 @@ def main():
     enter = False
     guesses = 0
     caret = 0
-    scale = 1
     digits = 0
 
     while loop:
@@ -126,12 +125,11 @@ def main():
                 screen.blit(pygame.transform.scale(welcome,(1000,285)),(115,130),(0,0,800,228))
                 pygame.display.flip()
                 attempts = 3
-                secret_num = r.randint(0,1)
-                #print("Secret Number: ",secret_num,"Scale: ",scale)
                 start_time = time.time()
                 while time.time() - start_time < 3:
                     pass
                 lvl = 1
+                secret_num = r.randint(0,1)
 
             if lvl == 1:
                 screen.fill((100,100,100))
@@ -231,13 +229,12 @@ def main():
                         screen.blit(pygame.transform.scale(correct,(400,114)),(450,565),(0,0,800,228))
                         pygame.display.flip()
                         if lvl == 10: lvl = 0; win = True; gaming = False
-                        if lvl <= 9: scale += 1; lvl += 1; text_box = ['x','x']; secret_num = r.randint(0,scale)
+                        if lvl <= 9: lvl += 1; secret_num = r.randint(0,lvl); text_box = ['x','x']
                     if attempts == 0 and not win: lvl = '?'; guesses = 0; menu = True; gaming = False
                     start_time = time.time()
                     while time.time() - start_time < 2:
                         pass
                     enter = False
-                    #print("Secret Number: ",secret_num,"Scale: ",scale)
 
                 # Text indicator
                 if text_input == ['x','x']:
@@ -323,54 +320,53 @@ def main():
 
         if win:
             guesses = str(guesses)
+            print(guesses)
             screen.fill((100,100,100))
             screen.blit(pygame.transform.scale(end,(1000,285)),(115,130),(0,0,800,228))
             screen.blit(pygame.transform.scale(record,(1000,285)),(125,390),(0,0,1000,285))
-
             for g in range(len(guesses)):
-                #print("You correctly guessed the number ",guesses," times")
                 if g == 0:
                     if guesses[0] == '0':
-                        screen.blit(pygame.transform.scale(number,(300,33)),(900,508),(0,0,30,33))
+                        screen.blit(pygame.transform.scale(number,(400,40)),(815,508),(0,0,40,40))
                     if guesses[0] == '1':
-                        screen.blit(pygame.transform.scale(number,(300,33)),(900,508),(30,0,30,33))
+                        screen.blit(pygame.transform.scale(number,(400,40)),(815,508),(40,0,40,40))
                     if guesses[0] == '2':
-                        screen.blit(pygame.transform.scale(number,(300,33)),(900,508),(60,0,30,33))
+                        screen.blit(pygame.transform.scale(number,(400,40)),(815,508),(80,0,40,40))
                     if guesses[0] == '3':
-                        screen.blit(pygame.transform.scale(number,(300,33)),(900,508),(90,0,30,33))
+                        screen.blit(pygame.transform.scale(number,(400,40)),(815,508),(120,0,40,40))
                     if guesses[0] == '4':
-                        screen.blit(pygame.transform.scale(number,(300,33)),(900,508),(120,0,30,33))
+                        screen.blit(pygame.transform.scale(number,(400,40)),(815,508),(160,0,40,40))
                     if guesses[0] == '5':
-                        screen.blit(pygame.transform.scale(number,(300,33)),(900,508),(150,0,30,33))
+                        screen.blit(pygame.transform.scale(number,(400,40)),(815,508),(200,0,40,40))
                     if guesses[0] == '6':
-                        screen.blit(pygame.transform.scale(number,(300,33)),(900,508),(180,0,30,33))
+                        screen.blit(pygame.transform.scale(number,(400,40)),(815,508),(240,0,40,40))
                     if guesses[0] == '7':
-                        screen.blit(pygame.transform.scale(number,(300,33)),(900,508),(210,0,30,33))
+                        screen.blit(pygame.transform.scale(number,(400,40)),(815,508),(280,0,40,40))
                     if guesses[0] == '8':
-                        screen.blit(pygame.transform.scale(number,(300,33)),(900,508),(240,0,30,33))
+                        screen.blit(pygame.transform.scale(number,(400,40)),(815,508),(320,0,40,40))
                     if guesses[0] == '9':
-                        screen.blit(pygame.transform.scale(number,(300,33)),(900,508),(270,0,30,33))
+                        screen.blit(pygame.transform.scale(number,(400,40)),(815,508),(360,0,40,40))
                 else:
                     if guesses[1] == '0':
-                        screen.blit(pygame.transform.scale(number,(300,33)),(925,508),(0,0,30,33))
+                        screen.blit(pygame.transform.scale(number,(400,40)),(850,508),(0,0,40,40))
                     if guesses[1] == '1':
-                        screen.blit(pygame.transform.scale(number,(300,33)),(925,508),(30,0,30,33))
+                        screen.blit(pygame.transform.scale(number,(400,40)),(850,508),(40,0,40,40))
                     if guesses[1] == '2':
-                        screen.blit(pygame.transform.scale(number,(300,33)),(925,508),(60,0,30,33))
+                        screen.blit(pygame.transform.scale(number,(400,40)),(850,508),(80,0,40,40))
                     if guesses[1] == '3':
-                        screen.blit(pygame.transform.scale(number,(300,33)),(925,508),(90,0,30,33))
+                        screen.blit(pygame.transform.scale(number,(400,40)),(850,508),(120,0,40,40))
                     if guesses[1] == '4':
-                        screen.blit(pygame.transform.scale(number,(300,33)),(925,508),(120,0,30,33))
+                        screen.blit(pygame.transform.scale(number,(400,40)),(850,508),(160,0,40,40))
                     if guesses[1] == '5':
-                        screen.blit(pygame.transform.scale(number,(300,33)),(925,508),(150,0,30,33))
+                        screen.blit(pygame.transform.scale(number,(400,40)),(850,508),(200,0,40,40))
                     if guesses[1] == '6':
-                        screen.blit(pygame.transform.scale(number,(300,33)),(925,508),(180,0,30,33))
+                        screen.blit(pygame.transform.scale(number,(400,40)),(850,508),(240,0,40,40))
                     if guesses[1] == '7':
-                        screen.blit(pygame.transform.scale(number,(300,33)),(925,508),(210,0,30,33))
+                        screen.blit(pygame.transform.scale(number,(400,40)),(850,508),(280,0,40,40))
                     if guesses[1] == '8':
-                        screen.blit(pygame.transform.scale(number,(300,33)),(925,508),(240,0,30,33))
+                        screen.blit(pygame.transform.scale(number,(400,40)),(850,508),(320,0,40,40))
                     if guesses[1] == '9':
-                        screen.blit(pygame.transform.scale(number,(300,33)),(925,508),(270,0,30,33))
+                        screen.blit(pygame.transform.scale(number,(400,40)),(850,508),(360,0,40,40))
 
             pygame.display.flip()
             start_time = time.time()
@@ -404,61 +400,49 @@ def main():
                                 enter = True
                                 text_box.append(text_input[key])
                                 text_input[key] = 'x'
-                                #print(text_input)
                     for key in range(len(text_input)):
                         if event.key == pygame.K_BACKSPACE:
                             if type(text_input[key]) is int and cursor:
                                 text_input[key] = 'x'
-                                #print(text_input)
                         if event.key == pygame.K_0 or event.key == pygame.K_KP0:
                             if text_input[key] == 'x' and cursor:
                                 text_input[key] = 0
-                               #print(text_input)
                                 cursor = False
                         if event.key == pygame.K_1 or event.key == pygame.K_KP1:
                             if text_input[key] == 'x' and cursor:
                                 text_input[key] = 1
-                               #print(text_input)
                                 cursor = False
                         if event.key == pygame.K_2 or event.key == pygame.K_KP2:
                             if text_input[key] == 'x' and cursor:
                                 text_input[key] = 2
-                               #print(text_input)
                                 cursor = False
                         if event.key == pygame.K_3 or event.key == pygame.K_KP3:
                             if text_input[key] == 'x' and cursor:
                                 text_input[key] = 3
-                               #print(text_input)
                                 cursor = False
                         if event.key == pygame.K_4 or event.key == pygame.K_KP4:
                             if text_input[key] == 'x' and cursor:
                                 text_input[key] = 4
-                               #print(text_input)
                                 cursor = False
                         if event.key == pygame.K_5 or event.key == pygame.K_KP5:
                             if text_input[key] == 'x' and cursor:
                                 text_input[key] = 5
-                               #print(text_input)
                                 cursor = False
                         if event.key == pygame.K_6 or event.key == pygame.K_KP6:
                             if text_input[key] == 'x' and cursor:
                                 text_input[key] = 6
-                               #print(text_input)
                                 cursor = False
                         if event.key == pygame.K_7 or event.key == pygame.K_KP7:
                            if text_input[key] == 'x' and cursor:
                                text_input[key] = 7
-                              #print(text_input)
                                cursor = False
                         if event.key == pygame.K_8 or event.key == pygame.K_KP8:
                             if text_input[key] == 'x' and cursor:
                                 text_input[key] = 8
-                               #print(text_input)
                                 cursor = False
                         if event.key == pygame.K_9 or event.key == pygame.K_KP9:
                             if text_input[key] == 'x' and cursor:
                                 text_input[key] = 9
-                               #print(text_input)
                                 cursor = False
 
     pygame.quit()

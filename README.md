@@ -26,4 +26,4 @@ pyinstaller --noconsole -F --i "src/a/icon.ico" --add-data "src;src/"  "main.py"
 ## Development information
 Developed by: Jatzylap
 
-Libraries used: Pygame 2.5.0, OpenCV 4.8.0
+Libraries used: Pygame 2.5.2, OpenCV 4.10.0
